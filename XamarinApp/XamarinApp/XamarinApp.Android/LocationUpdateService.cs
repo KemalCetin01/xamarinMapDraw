@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using XamarinApp.Droid;
 using XamarinApp.Services;
 
@@ -48,7 +50,7 @@ namespace XamarinApp.Droid
         }
         public void OnLocationChanged(Location location)
         {
-            if (location!=null)
+            if (location != null)
             {
                 LocationEventArgs args = new LocationEventArgs
                 {
@@ -58,7 +60,7 @@ namespace XamarinApp.Droid
                 LocationChanged(this, args);
             }
         }
-
+    
         public void OnProviderDisabled(string provider)
         {
             throw new NotImplementedException();

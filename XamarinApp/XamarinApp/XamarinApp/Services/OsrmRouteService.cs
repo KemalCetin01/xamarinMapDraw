@@ -18,22 +18,44 @@ namespace XamarinApp.Services
         {
             _httpClient = new HttpClient();
         }
-        public async Task<DirectionResponse> GetDirectionResponseAsync(string origin, string destination)
+        public async Task<DirectionResponse> GetDirectionResponseAsync(string origin, string destination,bool isGetLocations=false)
         {
-            var originLocations = await Geocoding.GetLocationsAsync(origin);
-            var originLocation = originLocations?.FirstOrDefault();
-
-            var destinationLocations = await Geocoding.GetLocationsAsync(destination);
-            var destinationLocation = destinationLocations?.FirstOrDefault();
-
-            if (originLocation == null || destinationLocation == null)
+            double originLatitude;
+            double originLongitude;
+            double destinationLatitude;
+            double destinationLongitude;
+            if (isGetLocations)
             {
-                return null;
+                string[] splOrigin = origin.Split('-');
+                originLatitude = Convert.ToDouble(splOrigin[0]);
+                originLongitude = Convert.ToDouble(splOrigin[1]);
+                string[] splDestination = destination.Split('-');
+                destinationLatitude = Convert.ToDouble(splDestination[0]);
+                destinationLongitude = Convert.ToDouble(splDestination[1]);
             }
-            if (originLocation != null || destinationLocation != null)
+            else
             {
-                string url = string.Format(baseRouteUrl) + $"{originLocation.Longitude},{originLocation.Latitude};" +
-                    $"{destinationLocation.Longitude},{destinationLocation.Latitude}?overview=full&geometries=polyline&steps=false";
+                var originLocations = await Geocoding.GetLocationsAsync(origin);
+                var originLocation = originLocations?.FirstOrDefault();
+                originLatitude = originLocation.Latitude;
+                originLongitude = originLocation.Longitude;
+
+                var destinationLocations = await Geocoding.GetLocationsAsync(destination);
+                var destinationLocation = destinationLocations?.FirstOrDefault();
+                destinationLatitude = destinationLocation.Latitude;
+                destinationLongitude = destinationLocation.Longitude;
+
+                if (originLocation == null || destinationLocation == null)
+                {
+                    return null;
+                }
+            }
+
+
+            if (originLatitude != 0 || originLongitude != 0 || destinationLatitude != 0 || destinationLongitude != 0)
+            {
+                string url = string.Format(baseRouteUrl) + $"{originLongitude},{originLatitude};" +
+                    $"{destinationLongitude},{destinationLatitude}?overview=full&geometries=polyline&steps=false";
 
                 var response = await _httpClient.GetAsync(url);
                 if (response.IsSuccessStatusCode)

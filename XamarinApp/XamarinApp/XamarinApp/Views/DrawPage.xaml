@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinApp.Views.DrawPage"
+             xmlns:vm="clr-namespace:XamarinApp.ViewModels" xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             Title="{Binding Title}">
+
+    <Grid RowSpacing="5">
+        <Grid.Margin>
+            <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="IOS" Value="0,40,0,0"/>
+                <On Platform="Android,WinPhone,Windows" Value="0,0,0,0"/>
+            </OnPlatform>
+        </Grid.Margin>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <maps:Map IsShowingUser="True" Grid.Row="0" Grid.RowSpan="3" x:Name="map" HasZoomEnabled="True" />
+
+
+        <Grid Padding="15,20"
+              Margin="20"
+              ColumnSpacing="10"
+              RowSpacing="10"
+              BackgroundColor="White"
+              VerticalOptions="Start">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.RowSpan="2"
+                Padding="0,10"
+                Spacing="0"
+                HorizontalOptions="Center">
+                <BoxView HeightRequest="5"
+                         WidthRequest="5"
+                         CornerRadius="2.5"
+                         Color="Gray"
+                         x:Name="originView">
+                </BoxView>
+                <BoxView WidthRequest="0.5"
+                         HorizontalOptions="Center"
+                         VerticalOptions="FillAndExpand"
+                         Color="Gray">
+                </BoxView>
+
+                <BoxView HeightRequest="5"
+                         WidthRequest="5"
+                         Color="Black"
+                         x:Name="destinationView">
+                </BoxView>
+
+            </StackLayout>
+
+            <Entry Placeholder="Nerden?"
+                   x:Name="Origin"
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   Text="{Binding Origin}"
+                   HorizontalOptions="FillAndExpand"/>
+            <Entry Placeholder="Nereye?" 
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   Text="{Binding Destination}"
+                    HorizontalOptions="FillAndExpand"/>
+            <Image Source="go"
+                   VerticalOptions="EndAndExpand"
+                   HeightRequest="30"
+                   WidthRequest="30"
+                   Grid.Row="1"
+                   Grid.Column="2">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GetRouteCommand}">
+
+                    </TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+
+        </Grid>
+
+        <ActivityIndicator Grid.Row="1" IsRunning="{Binding IsBusy}" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+
+        <Grid Grid.Row="2" RowSpacing="0" IsVisible="{Binding ShowRouteDetails}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0" BackgroundColor="#EDEDED">
+                <Label Padding="5" 
+                       Text="{Binding RouteDuration,StringFormat='Estimated Duration Time: {0} Mins'}"
+                       HorizontalOptions="Center"
+                       TextColor="DarkGray"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" BackgroundColor="#FFF" HeightRequest="60">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0">
+                        <Label Text="{Binding Fare,StringFormat='${0}'}" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black"/>
+                        <Label Text="FARE ESTİMATE" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#566573"/>
+                    </StackLayout>
+
+                    <BoxView Grid.Column="1" HeightRequest="90" WidthRequest="1" BackgroundColor="DarkGray"/>
+
+                    <StackLayout Grid.Column="2">
+                        <Label Text="Applied" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#38B7FB"/>
+                        <Label Text="{Binding Destination,StringFormat='${0}'}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#566573"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Padding="5" BackgroundColor="#049ff8">
+                <Label Padding="5" Text="Request My Ride"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontSize="Large"
+                       TextColor="White"/>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

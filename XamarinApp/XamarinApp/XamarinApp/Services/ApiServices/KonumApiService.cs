@@ -11,7 +11,7 @@ namespace XamarinApp.Services.ApiServices
     public class KonumApiService
     {
         private static HttpClient _httpClient;
-        private string baseUrl = $"http://192.168.1.33:45455/api/Konum/";
+        private string baseUrl = $"http://192.168.1.37:45455/api/Konum/";
         public KonumApiService()
         {
             _httpClient = new HttpClient();
