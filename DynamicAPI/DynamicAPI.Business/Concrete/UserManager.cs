@@ -1,9 +1,9 @@
 ﻿using DynamicAPI.Business.Constants;
 using DynamicAPI.Business.Service;
+using DynamicAPI.Core.Entities.Concrete;
 using DynamicAPI.Core.Utilities.Business;
 using DynamicAPI.Core.Utilities.Results;
 using DynamicAPI.DataAccess.Service;
-using DynamicAPI.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,9 +29,9 @@ namespace DynamicAPI.Business.Concrete
             }
             return new SuccessResult();
         }
-        private IResult CheckIfUserExists(string userName)
+        private IResult CheckIfUserExists(string eMail)
         {
-            var result = _userDal.GetList(p => p.kullaniciAdi == userName).Any();
+            var result = _userDal.GetList(p => p.Email == eMail).Any();
             if (result)
             {
                 return new ErrorResult(Messages.UserNameAlreadyExists);
@@ -42,7 +42,7 @@ namespace DynamicAPI.Business.Concrete
         public IResult Add(User user)
         {
             //IResult result = BusinessRules.Run(CheckIfUserNotExists(user.Id), CheckIfUserExists(user.kullaniciAdi));//Odanın bağlı olduğu bina yoksa veya Aynı oda ismi varsa
-            IResult result = BusinessRules.Run(CheckIfUserExists(user.kullaniciAdi));//Odanın bağlı olduğu bina yoksa veya Aynı oda ismi varsa
+            IResult result = BusinessRules.Run(CheckIfUserExists(user.Email));//Odanın bağlı olduğu bina yoksa veya Aynı oda ismi varsa
             if (result != null)
             {
                 return result;
@@ -72,5 +72,15 @@ namespace DynamicAPI.Business.Concrete
             _userDal.Update(user);
             return new SuccessResult(Messages.UserUpdated);
         }
+
+        public IDataResult<User> GetByMail(string email)
+        {
+            return new SuccessDataResult<User>(_userDal.Get(p => p.Email == email));
+        }
+        public List<OperationClaim> GetClaims(User user)
+        {
+            return _userDal.GetClaims(user);
+        }
+
     }
 }

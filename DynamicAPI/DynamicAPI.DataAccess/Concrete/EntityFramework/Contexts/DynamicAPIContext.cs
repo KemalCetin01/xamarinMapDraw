@@ -1,4 +1,5 @@
-﻿using DynamicAPI.Entities.DTOs;
+﻿using DynamicAPI.Core.Entities.Concrete;
+using DynamicAPI.Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
@@ -16,7 +17,10 @@ namespace DynamicAPI.DataAccess.Concrete.EntityFramework.Contexts
         {
         }
 
-        public DbSet<Location> Konums { get; set; }
+        public DbSet<Location> Locations { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<OperationClaim> OperationClaims { get; set; }
+        public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
+
     }
 }

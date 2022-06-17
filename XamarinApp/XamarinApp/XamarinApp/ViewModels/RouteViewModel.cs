@@ -134,7 +134,7 @@ namespace XamarinApp.ViewModels
                 Double firstPinLocation_latitude = Convert.ToDouble(splFirstPinLocation[0]);
                 Double firstPinLocation_longitude = Convert.ToDouble(splFirstPinLocation[1]);
 
-                string[] splLastPinLocation = firstPinLocation.Split('-');
+                string[] splLastPinLocation = lastPinLocation.Split('-');
                 Double LastPinLocation_latitude = Convert.ToDouble(splLastPinLocation[0]);
                 Double LastPinLocation_longitude = Convert.ToDouble(splLastPinLocation[1]);
 
@@ -152,7 +152,7 @@ namespace XamarinApp.ViewModels
                 {
                     Label = "Destination",
                     Address = Destination,
-                    Type = PinType.Generic,
+                    Type = PinType.Place,
                     Position = new Position(LastPinLocation_latitude, LastPinLocation_longitude)
                 };
                 map.Pins.Add(destinationPin);

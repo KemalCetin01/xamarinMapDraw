@@ -21,3 +21,4 @@ D:\project\DynamicAPI\DynamicAPI.Core\bin\Debug\net5.0\DynamicAPI.Core.pdb
 D:\project\DynamicAPI\DynamicAPI.Core\obj\Debug\net5.0\DynamicAPI.Core.dll
 D:\project\DynamicAPI\DynamicAPI.Core\obj\Debug\net5.0\ref\DynamicAPI.Core.dll
 D:\project\DynamicAPI\DynamicAPI.Core\obj\Debug\net5.0\DynamicAPI.Core.pdb
+D:\project\DynamicAPI\DynamicAPI.Core\obj\Debug\net5.0\DynamicAPI.Core.csproj.AssemblyReference.cache

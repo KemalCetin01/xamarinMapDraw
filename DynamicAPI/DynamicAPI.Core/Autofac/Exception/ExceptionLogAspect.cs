@@ -1,13 +1,11 @@
-﻿using DynamicAPI.Core.CrossCuttingConcerns.Logging;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Castle.DynamicProxy;
+using DynamicAPI.Core.CrossCuttingConcerns.Logging;
 using DynamicAPI.Core.CrossCuttingConcerns.Logging.Log4Net;
 using DynamicAPI.Core.Utilities.Interceptors;
 using DynamicAPI.Core.Utilities.Messages;
-using Castle.DynamicProxy;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DynamicAPI.Core.Aspectts.Autofac.Exception
 {

@@ -108,7 +108,7 @@
                        TextColor="DarkGray"/>
             </StackLayout>
 
-            <StackLayout Grid.Row="1" BackgroundColor="#FFF" HeightRequest="60">
+            <StackLayout Grid.Row="1" BackgroundColor="#FFF" HeightRequest="70">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -116,15 +116,15 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <StackLayout Grid.Column="0">
+                        <Label Text="ÜCRET" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#38B7FB"  FontSize="Large"/>
                         <Label Text="{Binding Fare,StringFormat='${0}'}" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black"/>
-                        <Label Text="FARE ESTİMATE" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#566573"/>
                     </StackLayout>
 
                     <BoxView Grid.Column="1" HeightRequest="90" WidthRequest="1" BackgroundColor="DarkGray"/>
 
                     <StackLayout Grid.Column="2">
-                        <Label Text="Applied" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#38B7FB"/>
-                        <Label Text="{Binding Destination,StringFormat='${0}'}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#566573"/>
+                        <Label Text="MESAFE" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#38B7FB"/>
+                        <Label Text="{Binding RouteDistance,StringFormat='{0} km'}" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black"/>
                     </StackLayout>
                 </Grid>
             </StackLayout>

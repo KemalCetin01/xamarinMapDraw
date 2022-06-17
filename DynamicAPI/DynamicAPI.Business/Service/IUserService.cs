@@ -1,5 +1,5 @@
-﻿using DynamicAPI.Core.Utilities.Results;
-using DynamicAPI.Entities.DTOs;
+﻿using DynamicAPI.Core.Entities.Concrete;
+using DynamicAPI.Core.Utilities.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +12,11 @@ namespace DynamicAPI.Business.Service
     {
         IDataResult<List<User>> getList();
         IDataResult<User> getById(int Id);
+        IDataResult<User> GetByMail(string email);
         IResult Add(User user);
         IResult Delete(User user);
         IResult Update(User user);
+        List<OperationClaim> GetClaims(User user);
+
     }
 }

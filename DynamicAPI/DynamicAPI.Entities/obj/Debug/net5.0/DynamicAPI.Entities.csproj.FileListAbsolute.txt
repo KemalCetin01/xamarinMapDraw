@@ -21,3 +21,7 @@ D:\project\DynamicAPI\DynamicAPI.Entities\obj\Debug\net5.0\DynamicAPI.Entities.c
 D:\project\DynamicAPI\DynamicAPI.Entities\obj\Debug\net5.0\DynamicAPI.Entities.dll
 D:\project\DynamicAPI\DynamicAPI.Entities\obj\Debug\net5.0\ref\DynamicAPI.Entities.dll
 D:\project\DynamicAPI\DynamicAPI.Entities\obj\Debug\net5.0\DynamicAPI.Entities.pdb
+D:\project\DynamicAPI\DynamicAPI.Entities\obj\Debug\net5.0\DynamicAPI.Entities.csproj.AssemblyReference.cache
+D:\project\DynamicAPI\DynamicAPI.Entities\bin\Debug\net5.0\DynamicAPI.Core.dll
+D:\project\DynamicAPI\DynamicAPI.Entities\bin\Debug\net5.0\DynamicAPI.Core.pdb
+D:\project\DynamicAPI\DynamicAPI.Entities\obj\Debug\net5.0\DynamicAPI.Entities.csproj.CopyComplete

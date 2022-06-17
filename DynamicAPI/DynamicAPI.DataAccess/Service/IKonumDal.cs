@@ -1,5 +1,5 @@
 ﻿using DynamicAPI.Core.DataAccess;
-using DynamicAPI.Entities.DTOs;
+using DynamicAPI.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;

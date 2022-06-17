@@ -19,7 +19,70 @@ namespace DynamicAPI.DataAccess.Migrations
                 .HasAnnotation("ProductVersion", "5.0.10")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-            modelBuilder.Entity("DynamicAPI.Entities.DTOs.Location", b =>
+            modelBuilder.Entity("DynamicAPI.Core.Entities.Concrete.OperationClaim", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("OperationClaims");
+                });
+
+            modelBuilder.Entity("DynamicAPI.Core.Entities.Concrete.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("Email")
+                        .HasColumnType("text");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("text");
+
+                    b.Property<byte[]>("PasswordHash")
+                        .HasColumnType("bytea");
+
+                    b.Property<byte[]>("PasswordSalt")
+                        .HasColumnType("bytea");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("boolean");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("DynamicAPI.Core.Entities.Concrete.UserOperationClaim", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<int>("OperationClaimId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserOperationClaims");
+                });
+
+            modelBuilder.Entity("DynamicAPI.Entities.Concrete.Location", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -42,42 +105,12 @@ namespace DynamicAPI.DataAccess.Migrations
 
                     b.HasIndex("UserID");
 
-                    b.ToTable("Konums");
+                    b.ToTable("Locations");
                 });
 
-            modelBuilder.Entity("DynamicAPI.Entities.DTOs.User", b =>
+            modelBuilder.Entity("DynamicAPI.Entities.Concrete.Location", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<string>("adi")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("createTime")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<bool>("isDeleted")
-                        .HasColumnType("boolean");
-
-                    b.Property<string>("kullaniciAdi")
-                        .HasColumnType("text");
-
-                    b.Property<string>("sifre")
-                        .HasColumnType("text");
-
-                    b.Property<string>("soyadi")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("DynamicAPI.Entities.DTOs.Location", b =>
-                {
-                    b.HasOne("DynamicAPI.Entities.DTOs.User", "User")
+                    b.HasOne("DynamicAPI.Core.Entities.Concrete.User", "User")
                         .WithMany()
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)

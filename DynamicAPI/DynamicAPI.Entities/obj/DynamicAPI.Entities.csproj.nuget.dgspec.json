@@ -4,6 +4,106 @@
     "D:\\project\\DynamicAPI\\DynamicAPI.Entities\\DynamicAPI.Entities.csproj": {}
   },
   "projects": {
+    "D:\\project\\DynamicAPI\\DynamicAPI.Core\\DynamicAPI.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\project\\DynamicAPI\\DynamicAPI.Core\\DynamicAPI.Core.csproj",
+        "projectName": "DynamicAPI.Core",
+        "projectPath": "D:\\project\\DynamicAPI\\DynamicAPI.Core\\DynamicAPI.Core.csproj",
+        "packagesPath": "C:\\Users\\kemal.cetin\\.nuget\\packages\\",
+        "outputPath": "D:\\project\\DynamicAPI\\DynamicAPI.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\kemal.cetin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[4.4.0, )"
+            },
+            "Castle.Core": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.0.3, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.19.0, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.14, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\project\\DynamicAPI\\DynamicAPI.Entities\\DynamicAPI.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -31,7 +131,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\project\\DynamicAPI\\DynamicAPI.Core\\DynamicAPI.Core.csproj": {
+                "projectPath": "D:\\project\\DynamicAPI\\DynamicAPI.Core\\DynamicAPI.Core.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

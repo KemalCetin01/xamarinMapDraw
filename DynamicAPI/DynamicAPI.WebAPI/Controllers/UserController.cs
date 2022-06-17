@@ -1,5 +1,5 @@
 ﻿using DynamicAPI.Business.Service;
-using DynamicAPI.Entities.DTOs;
+using DynamicAPI.Core.Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;

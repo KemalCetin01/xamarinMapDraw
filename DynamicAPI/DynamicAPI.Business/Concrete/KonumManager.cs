@@ -3,7 +3,7 @@ using DynamicAPI.Business.Service;
 using DynamicAPI.Core.Utilities.Business;
 using DynamicAPI.Core.Utilities.Results;
 using DynamicAPI.DataAccess.Service;
-using DynamicAPI.Entities.DTOs;
+using DynamicAPI.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,7 +63,7 @@ namespace DynamicAPI.Business.Concrete
         }
         public IDataResult<List<Location>> getTodayByUserId(int userID)
         {
-            return new SuccessDataResult<List<Location>>(_konumDal.GetList(p => p.UserID == userID).Where(a => a.UserID == userID && a.createTime == DateTime.Today).ToList());
+            return new SuccessDataResult<List<Location>>(_konumDal.GetList(p => p.UserID == userID).Where(a => a.UserID == userID && a.createTime == DateTime.Today).OrderBy(x=>x.Id).ToList());
         }
 
         public IDataResult<List<Location>> getList()
