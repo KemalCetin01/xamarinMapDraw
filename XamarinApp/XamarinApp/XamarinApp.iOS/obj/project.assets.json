@@ -1305,11 +1305,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\project\\XamarinApp\\XamarinApp\\XamarinApp.iOS\\XamarinApp.iOS.csproj",
+      "projectUniqueName": "D:\\project\\xamarinMapDraw\\XamarinApp\\XamarinApp\\XamarinApp.iOS\\XamarinApp.iOS.csproj",
       "projectName": "XamarinApp.iOS",
-      "projectPath": "D:\\project\\XamarinApp\\XamarinApp\\XamarinApp.iOS\\XamarinApp.iOS.csproj",
+      "projectPath": "D:\\project\\xamarinMapDraw\\XamarinApp\\XamarinApp\\XamarinApp.iOS\\XamarinApp.iOS.csproj",
       "packagesPath": "C:\\Users\\kemal.cetin\\.nuget\\packages\\",
-      "outputPath": "D:\\project\\XamarinApp\\XamarinApp\\XamarinApp.iOS\\obj\\",
+      "outputPath": "D:\\project\\xamarinMapDraw\\XamarinApp\\XamarinApp\\XamarinApp.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1330,8 +1330,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\project\\XamarinApp\\XamarinApp\\XamarinApp\\XamarinApp.csproj": {
-              "projectPath": "D:\\project\\XamarinApp\\XamarinApp\\XamarinApp\\XamarinApp.csproj"
+            "D:\\project\\xamarinMapDraw\\XamarinApp\\XamarinApp\\XamarinApp\\XamarinApp.csproj": {
+              "projectPath": "D:\\project\\xamarinMapDraw\\XamarinApp\\XamarinApp\\XamarinApp\\XamarinApp.csproj"
             }
           }
         }

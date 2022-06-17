@@ -3527,11 +3527,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\project\\XamarinApp\\XamarinApp\\XamarinApp.Android\\XamarinApp.Android.csproj",
+      "projectUniqueName": "D:\\project\\xamarinMapDraw\\XamarinApp\\XamarinApp\\XamarinApp.Android\\XamarinApp.Android.csproj",
       "projectName": "XamarinApp.Android",
-      "projectPath": "D:\\project\\XamarinApp\\XamarinApp\\XamarinApp.Android\\XamarinApp.Android.csproj",
+      "projectPath": "D:\\project\\xamarinMapDraw\\XamarinApp\\XamarinApp\\XamarinApp.Android\\XamarinApp.Android.csproj",
       "packagesPath": "C:\\Users\\kemal.cetin\\.nuget\\packages\\",
-      "outputPath": "D:\\project\\XamarinApp\\XamarinApp\\XamarinApp.Android\\obj\\",
+      "outputPath": "D:\\project\\xamarinMapDraw\\XamarinApp\\XamarinApp\\XamarinApp.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -3552,8 +3552,8 @@
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
-            "D:\\project\\XamarinApp\\XamarinApp\\XamarinApp\\XamarinApp.csproj": {
-              "projectPath": "D:\\project\\XamarinApp\\XamarinApp\\XamarinApp\\XamarinApp.csproj"
+            "D:\\project\\xamarinMapDraw\\XamarinApp\\XamarinApp\\XamarinApp\\XamarinApp.csproj": {
+              "projectPath": "D:\\project\\xamarinMapDraw\\XamarinApp\\XamarinApp\\XamarinApp\\XamarinApp.csproj"
             }
           }
         }

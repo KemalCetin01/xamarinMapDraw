@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ar6fZFadJeUrUTrIjcXwmHojyX9XPZPeD01RkGSzMGjR2amqfiG/C8NMc1Aou2a60xWsJB1uREBMF6Y0yJIg+A==",
+  "dgSpecHash": "LxyCnkFH6Lk4+C/lOGfYWX++HrlgbLXGN05gfgtTIe3CjiICeq1Pr8SEHmSma7wqhLy+2zgDZjJp3OyMcXSnOw==",
   "success": true,
-  "projectFilePath": "D:\\project\\XamarinApp\\XamarinApp\\XamarinApp\\XamarinApp.csproj",
+  "projectFilePath": "D:\\project\\xamarinMapDraw\\XamarinApp\\XamarinApp\\XamarinApp\\XamarinApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kemal.cetin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\kemal.cetin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

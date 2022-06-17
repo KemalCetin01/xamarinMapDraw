@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B+BkwrRPMGbRfpg/cOV+GbOgpn7fQS8y1xTrx2vuwqzJ1swNfKn5+JZDGjWnV2BtjNz4oInCLWf9JMv3Qn+srQ==",
+  "dgSpecHash": "/+ss7X06WQUm9MAHVwS0M1sZ1LW+/m17QIlWzTaopgeCPYoQOM7mdEg+Ueu/t6LPEJs3i95oEPYDz/mEebzLIA==",
   "success": true,
-  "projectFilePath": "D:\\project\\XamarinApp\\XamarinApp\\XamarinApp.Android\\XamarinApp.Android.csproj",
+  "projectFilePath": "D:\\project\\xamarinMapDraw\\XamarinApp\\XamarinApp\\XamarinApp.Android\\XamarinApp.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kemal.cetin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\kemal.cetin\\.nuget\\packages\\refractored.mvvmhelpers\\1.6.2\\refractored.mvvmhelpers.1.6.2.nupkg.sha512",
